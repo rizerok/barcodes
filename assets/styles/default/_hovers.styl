@@ -1,0 +1,19 @@
+.hov
+	&-block
+		position:relative;
+		transition:transform $glb-anim-drt, box-shadow $glb-anim-drt;
+		cursor:pointer;
+		filter:blur(0px);
+		&:hover
+			box-shadow:3px 5px 7px -1px rgba(0,0,0,0.2);
+			transform:translateY(-7px);
+	&-block-easy
+		position:relative;
+		transition:transform $glb-anim-drt, box-shadow $glb-anim-drt;
+		cursor:pointer;
+		filter:blur(0px);
+		&:hover
+			transform:translateY(-7px);
+
+	&-link-underline
+		decoration-underline('fade-in',$glb-color.theme-green,$glb-color.theme-green,0.15rem);

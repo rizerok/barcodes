@@ -1,0 +1,50 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node":true
+    },
+    "extends": "eslint:recommended",
+    "parser":"babel-eslint",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1,
+                "ignoredNodes": ["JSXElement *"]//ESLint v4.5.0
+            }
+        ],
+//        "linebreak-style": [
+//            "error",
+//            "unix"
+//        ],
+        "quotes": [
+            "error",
+            "single",
+            { "allowTemplateLiterals": true }
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-debugger": 0,
+        "no-console": 0,
+        "no-unused-vars": 0,
+        "no-useless-escape":0,
+        "no-undef":0,
+        "no-empty":0
+        //"react/jsx-indent-props":"error"
+    }
+//    "plugins":[
+//        "react"
+//    ]
+}

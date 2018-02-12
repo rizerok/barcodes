@@ -1,0 +1,23 @@
+//readonly
+//$def-bs-ver-indents
+//$def-fsz-base
+//edit
+//$bs-ver-indents
+//$fsz-base
+
+//readonly
+$def-fsz-base := 1.8em;
+//edit
+$sb-ver-indents := 2em;
+$fsz-base := 1.8em;
+
+val-rel($needed, $have)
+	unit(($fsz-base/$def-fsz-base) * ($needed/$def-fsz-base /$have), em)
+
+val-em($needed)
+	unit(($fsz-base/$def-fsz-base) * ($needed/$def-fsz-base), em);
+
+ver-indents-rel($needed)
+	unit($bs-ver-indents * ($needed / $def-bs-ver-indents), rem);
+
+//val * cof

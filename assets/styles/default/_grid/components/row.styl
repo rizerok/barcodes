@@ -1,0 +1,16 @@
+.row
+  box-sizing: border-box
+  display: flex
+  flex: 0 1 100%
+  flex-direction: row
+  flex-wrap: wrap
+  list-style: none
+  margin: 0 ($glb-half-gutter*-1)
+  width: 100%; //отрицательне margin'ы на мобилке
+  //padding: 0
+
+  //&:last-child
+  //  margin-bottom: 0//хрень
+
+  +variant(no-gutters)
+    margin: 0

@@ -1,0 +1,42 @@
+decoration-underline($d,$text-color=inherit,$border-color=inherit,$border-size=0.15em)
+	color:$text-color;
+	if($d == 'sink')
+		background-position: 0 -0.125em;
+		transition: background-position $glb-anim-drt;
+		background-image: linear-gradient(to top, transparent, transparent 0.0625em, $border-color 0.0625em, $border-color $border-size, transparent 0.125em);
+		padding-bottom: 0.375em;
+		&:hover
+			background-position: 0 0;
+	if($d == 'fade-in')
+		border-bottom:$border-size solid transparent;
+		transition:border $glb-anim-drt;
+		&:hover
+			border-bottom-color:$text-color;
+
+disable-link-decoration()
+	color:inherit;
+	background-image:none;
+	border-bottom:0;
+
+ratiobox($w,$h)
+	width:100%;
+	position:relative;
+	&:before
+		content:'';
+		display:block;
+		padding-top:(100%/$w*$h);
+
+work-layout()
+	*
+		background-color:rgba(#000,.05)
+
+sqrt(x)
+	if x == 0
+		result = 0
+	else
+		result = 4
+		for i in (0..10)
+			result = ((result + (x / result)) / 2)
+
+ratio($max-val,$val)
+	100%/$max-val*$val

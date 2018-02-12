@@ -1,0 +1,28 @@
+//containers
+//.cnr
+//	&-main
+//		margin-left: auto;
+//		margin-right: auto;
+//		padding-left: $screen-indents
+//		padding-right: $screen-indents
+//		max-width: $site-max-width;
+//
+//		+below($breakpoints.md)
+//			padding-left: $screen-indents - 1
+//			padding-right: $screen-indents - 1
+//
+//		+below($breakpoints.xs)
+//			padding-left: $screen-indents - 2
+//			padding-right: $screen-indents - 2
+
+.container
+	&-main
+		width:100%;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: $screen-indents;
+		padding-right: $screen-indents;
+		max-width: $site-max-width;
+		+below($breakpoints.md)
+			padding-left: $screen-indents-mobile;
+			padding-right: $screen-indents-mobile;

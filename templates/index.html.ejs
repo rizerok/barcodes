@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Barcodes</title>
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+    <% for (let key in htmlWebpackPlugin.files.css) { %>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[key] %>"><% } %>
+</head>
+<body>
+<div id="root"></div>
+
+
+
+<% for (let key in htmlWebpackPlugin.files.js) { %>
+<script src="<%= htmlWebpackPlugin.files.js[key] %>"></script><% } %>
+</body>
+</html>

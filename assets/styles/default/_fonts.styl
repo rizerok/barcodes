@@ -1,0 +1,9 @@
+$path-font = '~fonts/';
+font-face($family,$path-font,$path,$filename,$style,$weight,$format){
+	@font-face{
+		font-family:$family;
+		src:url($path-font +$path + $filename) format($format);
+		font-style:$style;
+		font-weight:$weight;
+	}
+}

@@ -1,0 +1,21 @@
+@import '~styles/default/_vars.styl';
+button-default($bg-color,$hover-bg-color,$text-color)
+	background:$bg-color;
+	color:$text-color;
+	cursor:pointer;
+	&:hover
+		background:$hover-bg-color;
+
+button-ghost($border-color,$hover-bg-color,$hover-text-color)
+	transition:border $glb-anim-drt, background-color $glb-anim-drt, color $glb-anim-drt;
+	background:transparent;
+	color:$border-color;
+	position:relative;
+	if $border-color == inherit
+		border:2px solid;
+	else
+		border:2px solid $border-color;
+	&:hover
+		background:$hover-bg-color;
+		color:$hover-text-color;
+		border:2px solid;
