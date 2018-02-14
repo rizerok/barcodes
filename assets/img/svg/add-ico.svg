@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>add-ico</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1033.000000, -2015.000000)">
+        <g id="reviews" transform="translate(0.000000, 1328.000000)" fill="#FFFFFF">
+            <g id="buttons" transform="translate(500.000000, 650.000000)">
+                <g id="button-:-send-review" transform="translate(496.000000, 0.000000)">
+                    <g id=":-default" transform="translate(18.000000, 18.000000)">
+                        <polygon id="add-ico" points="26 26 26 19 29 19 29 26 36 26 36 29 29 29 29 36 26 36 26 29 19 29 19 26"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

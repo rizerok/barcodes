@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="316px" height="90px" viewBox="0 0 316 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>barcode-big</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="287" height="160" rx="6"></rect>
+        <filter x="-10.5%" y="-14.4%" width="120.9%" height="137.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-837.000000, -2507.000000)">
+        <g id="faq" transform="translate(0.000000, 2147.000000)">
+            <g id="barcode-big" transform="translate(851.711767, 369.703134)">
+                <g id="Rectangle">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FCFCFC" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <rect id="Rectangle-2" fill="#323843" x="20" y="18" width="7" height="120"></rect>
+                <rect id="Rectangle-2-Copy" fill="#323843" x="35" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-9" fill="#323843" x="155" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-2" fill="#323843" x="50" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-10" fill="#323843" x="170" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-3" fill="#323843" x="65" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-11" fill="#323843" x="185" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-4" fill="#323843" x="80" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-12" fill="#323843" x="200" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-5" fill="#323843" x="95" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-13" fill="#323843" x="215" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-6" fill="#323843" x="110" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-14" fill="#323843" x="230" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-7" fill="#323843" x="125" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-15" fill="#323843" x="245" y="18" width="7" height="106"></rect>
+                <rect id="Rectangle-2-Copy-8" fill="#323843" x="140" y="18" width="7" height="120"></rect>
+                <rect id="Rectangle-2-Copy-16" fill="#323843" x="260" y="18" width="7" height="120"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
