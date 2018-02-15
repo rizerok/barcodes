@@ -11,39 +11,119 @@
 <body>
 <div class="page">
     <div class="header">
-        <div class="header__left">
-            <svg class="logo" width="31px" height="24px" viewBox="0 0 31 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-130.000000, -38.000000)">
-                    <g id="header" transform="translate(0.000000, 20.000000)" fill="#FFFFFF">
-                        <g id="logo" transform="translate(130.000000, 18.000000)">
-                            <path d="M0,0 L3,0 L3,24 L0,24 L0,0 Z M8,0 L11,0 L11,24 L8,24 L8,0 Z M13,0 L15,0 L15,24 L13,24 L13,0 Z M17,0 L20,0 L20,24 L17,24 L17,0 Z M28,0 L31,0 L31,24 L28,24 L28,0 Z M5,0 L6,0 L6,24 L5,24 L5,0 Z M22,0 L24,0 L24,24 L22,24 L22,0 Z M26,0 L27,0 L27,24 L26,24 L26,0 Z" id="logotype"></path>
+        <div class="container-main">
+            <div class="header__area">
+                <div class="header__left">
+                    <svg class="logo" width="31px" height="24px" viewBox="0 0 31 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-130.000000, -38.000000)">
+                            <g id="header" transform="translate(0.000000, 20.000000)" fill="#FFFFFF">
+                                <g id="logo" transform="translate(130.000000, 18.000000)">
+                                    <path d="M0,0 L3,0 L3,24 L0,24 L0,0 Z M8,0 L11,0 L11,24 L8,24 L8,0 Z M13,0 L15,0 L15,24 L13,24 L13,0 Z M17,0 L20,0 L20,24 L17,24 L17,0 Z M28,0 L31,0 L31,24 L28,24 L28,0 Z M5,0 L6,0 L6,24 L5,24 L5,0 Z M22,0 L24,0 L24,24 L22,24 L22,0 Z M26,0 L27,0 L27,24 L26,24 L26,0 Z" id="logotype"></path>
+                                </g>
+                            </g>
                         </g>
-                    </g>
-                </g>
-            </svg>
-            <span class="logo-title">verified-upс.com</span>
+                    </svg>
+                    <span class="logo-title">verified-upс.com</span>
+                </div>
+                <nav class="header__right">
+                    <ul class="navigation">
+                        <li>Where UPC codes whould works?</li>
+                        <li>How it works?</li>
+                        <li>Reviews</li>
+                        <li>FAQ</li>
+                        <li>Contact</li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <nav class="header_right">
-            <ul class="navigation">
-                <li>Where UPC codes whould works?</li>
-                <li>How it works?</li>
-                <li>Reviews</li>
-                <li>FAQ</li>
-                <li>Contact</li>
-            </ul>
-        </nav>
+
     </div>
     <div class="screen screen1">
-        Screen1
+        <div class="container-main screen1__area">
+            <div class="screen1__top">
+                <div class="screen1__top-left">
+                    <div class="screen1__text-banner">
+                        <div class="title">
+                            <p>Receive your <span class="m-text-italic"></span>verified</p>
+                            <p class="bold">UPC code in one minute</p>
+                        </div>
+                        <div class="description">
+                            <p>Create your personal listings and product pages </p>
+                            <p>on the most popular marketplaces in the world!</p>
+                        </div>
+                        <div class="screen1__text-banner-part3">
+                            <ul class="screen1__logo-list">
+                                <% let logos = [
+                                    {
+                                        src: '/assets/img/svg/amazon.svg',
+                                        alt: 'Amazon'
+                                    },
+                                    {
+                                        src: '/assets/img/svg/ebay.svg',
+                                        alt: 'Ebay'
+                                    },
+                                    {
+                                        src: '/assets/img/svg/itunes.svg',
+                                        alt: 'itunes'
+                                    },
+                                    {
+                                        src: '/assets/img/svg/tmall.svg',
+                                        alt: 'tmall'
+                                    },
+                                    {
+                                        src: '/assets/img/svg/rakuten.svg',
+                                        alt: 'racuten'
+                                    },
+                                    {
+                                        src: '/assets/img/svg/flipkart.svg',
+                                        alt: 'flipkart'
+                                    },
+                                    {
+                                        src: '/assets/img/svg/etsy.svg',
+                                        alt: 'Etsy'
+                                    }
+                                ]; %>
+                                <%
+                                    logos.forEach((logo) => { %>
+                                    <li class="screen1__logo-list-item">
+                                        <img src="<%=logo.src %>" alt="<%=logo.alt %>">
+                                    </li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="screen1__top-right">
+                    <div class="screen1__form-container">
+
+                    </div>
+                </div>
+            </div>
+            <div class="screen1__bottom">
+
+            </div>
+        </div>
     </div>
     <div class="screen screen2">
-        Screen2
+        <div class="container-main">
+            <div class="screen2__area">
+                Screen2
+            </div>
+        </div>
     </div>
     <div class="screen screen3">
-        Screen3
+        <div class="container-main">
+            <div class="screen3__area">
+                Screen3
+            </div>
+        </div>
     </div>
     <div class="screen screen4">
-        Screen4
+        <div class="container-main">
+            <div class="screen4__area">
+                Screen4
+            </div>
+        </div>
     </div>
 </div>
 <% for (let key in htmlWebpackPlugin.files.js) { %>

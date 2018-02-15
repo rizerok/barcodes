@@ -1,11 +1,18 @@
 .header
-	height: 10em;
-	position: fixed;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	position:fixed;
+	width: calc(100% + 17px);
+	&__area
+		height: 10em;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	&__left
+		display: flex;
+		align-items: center;
+	&__right
+		position:absolute;
+		right:3em;
+		height: 100%;
 		display: flex;
 		align-items: center;
 
