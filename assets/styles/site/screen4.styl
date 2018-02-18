@@ -1,2 +1,98 @@
 .screen4
 	background-color: #6573f5;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	&__area
+		flex-grow: 1;
+		display: flex;
+	&__middle
+		width: 100%;
+	&__header
+		margin-top: 170px;
+		margin-bottom: 26px;
+	&__faq
+		margin-top: -10px;
+		margin-left: -20px;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		width:100%;
+	&__faq-item
+		margin-top: 10px;
+		margin-left: 20px;
+		border-radius: 4px;
+		background-color: #ffffff;
+		box-shadow: 0 25px 30px 0 rgba(0, 0, 0, 0.15);
+		width: 50%;
+		padding:12px 20px;
+	&__faq-item-top
+		width: 100%;
+		display: flex;
+		align-item: center;
+		justify-content: space-between;
+	&__faq-item-title
+		font-size: 15px;
+		color: #5970a0;
+		font-weight: 500;
+		line-height: 1.33;
+	&__faq-item-arrow
+		width:20px;
+		height:20px;
+		transform: rotate(0);
+		transition: transform;
+	&__faq-item-text
+		display: none;
+		padding-top: 12px;
+		font-size: 14px;
+		color: #5970a0;
+		padding-bottom: 13px;
+
+	&__faq-item.is-open
+		this = '.screen4'
+		{this}__faq-item-title
+			color: #f5656d;
+		{this}__faq-item-arrow
+			transform: rotate(180deg)
+		{this}__faq-item-text
+			display:block;
+
+	&__footer
+		background-color: #292b41;
+		height: 138px;
+		position: relative;
+		z-index: 2;
+	&__footer-area
+		height:100%
+		display:flex;
+		justify-content: space-between;
+		align-items: center;
+	&__footer-logo
+		width:62px;
+		height:48px;
+		path
+			fill:#3e4164;
+
+	&__footer-email
+		color: #3ddf9e;
+		font-size: 14px;
+
+	&__footer-address
+		font-size: 13px;
+		line-height: 1.54;
+		text-align: right;
+
+	&__footer-item
+		min-width:300px;
+		max-height: 300px;
+
+	&__bottom-image
+		height:160px;
+		width:316px;
+		position:absolute;
+		bottom: 87px;
+		right: 80px;
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background:url(/assets/img/svg/barcode-big2.svg);

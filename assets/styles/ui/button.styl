@@ -1,0 +1,81 @@
+.button-number
+	min-height:  3.5em;
+	min-width: 3.5em;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: normal;
+	text-align: center;
+	color: #849bc9;
+	border-radius: 2px;
+	background-color: #ffffff;
+	border: solid 1px #d1dbef;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	& > *
+		font-size: 14px;
+		line-height:0;
+	&:hover
+		border: solid 1px #849bc9;
+	&.is-active
+		background-color: rgba(101, 111, 245, 0.1);
+		border: solid 1px #656ff5;
+		font-weight: 900;
+
+.button
+	width: 150px;
+	height: 45px;
+	border-radius: 22.5px;
+	background-color: #f5656d;
+	font-size: 17px;
+	font-weight: 900;
+	line-height: 1.47;
+	letter-spacing: normal;
+	text-align: center;
+	color: #ffffff;
+	position: relative;
+	cursor: pointer;
+	&:after
+		position: absolute;
+		top: 50%;
+		right: 20px;
+		transform: translate(0,-50%);
+		content:'';
+		width:20px;
+		height:20px;
+		object-fit: contain;
+		background:url(/assets/img/svg/arrow-mini-white.svg)
+		transition: transform $glb-anim-drt;
+	&:hover:after
+		transform: translate(50%,-50%)
+
+.button2
+	width: 195px;
+	height: 55px;
+	border-radius: 4px;
+	background-color: rgba(255, 255, 255, 0.2);
+	font-size: 15px;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	color:#fff;
+	tranition: background;
+	cursor:pointer;
+	&:hover
+		background-color: rgba(255, 255, 255, 0.4);
+
+.button3
+	width: 55px;
+	height: 55px;
+	background-color: #f5656d;
+	border-radius:50%;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	box-shadow:0 0 0 0 rgba(245, 101, 109, 0.5);
+	transition: box-shadow $glb-anim-drt;
+	cursor:pointer;
+	&:hover
+		box-shadow:0 0 0 22px rgba(245, 101, 109, 0.5);

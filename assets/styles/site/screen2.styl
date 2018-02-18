@@ -1,2 +1,46 @@
 .screen2
 	background-image: linear-gradient(to bottom, #38aff2, #6573f5);
+	&__area
+		display: flex;
+		flex-direction: column;
+		justify-content: stretch;
+		height:100%;
+	&__left
+		width: (100% /12 * 7);
+	&__left-img
+		width:342px;
+		height:253px;
+		background: url('/assets/img/raster/upc-illustrate.png');
+		@media (-webkit-min-device-pixel-ratio: 2) {
+			background: url('/assets/img/raster/upc-illustrate@2x.png');
+		}
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	&__right
+		height:253px;
+		padding-top: 14px;
+		width: (100% /12 * 5);
+	&__top
+		flex-grow:1;
+		display: flex;
+		align-items: center;
+	&__bottom
+		height: 25em;
+		display: flex;
+		justify-content: space-between;
+		& > * + *
+			margin-left: 20px;
+	&__bottom-item
+		max-width: 350px;
+	&__bottom-item-icon
+		width: 50px;
+		height: 50px;
+		margin-bottom: 15px;
+	&__bottom-item-title
+		font-size: 17px;
+		line-height: 1.47;
+		margin-bottom: 10px;
+	&__bottom-item-description
+		font-size: 14px;
+		line-height: 1.43;

@@ -1,2 +1,49 @@
 .screen3
 	background-color: #6573f5;
+	width:auto;
+	min-width: 100vw;
+	&__area
+		display: flex;
+		flex-direction: column;
+		height:100%;
+	&__header
+		margin-top: 71px;
+		margin-bottom: 49px;
+	&__middle
+		flex-grow: 1;
+	&__comments
+		margin-top: -15px;
+		margin-left: -21px;
+		display: flex;
+		flex-wrap:wrap;
+	&__comment
+		width: 50%;
+		border-radius: 4px;
+		background-color: #ffffff;
+		padding: 25px 30px;
+		margin-top: 15px;
+		margin-left: 21px;
+	&__comment-top
+		margin-bottom: 18px;
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+	&__comment-top-rank
+		display: flex;
+		& > * + *
+			margin-left: 6px;
+	&__comment-description
+		font-size: 15px;
+		font-family: $font-second;
+		line-height: 1.67;
+		color: #5970a0;
+	&__comment-top-author
+		font-size: 13px;
+		color: #849bc9;
+	&__actions
+		margin-top: 58px;
+		margin-bottom: 97px;
+		display: flex;
+		justify-content:space-between;
+		&:before
+			content:'';

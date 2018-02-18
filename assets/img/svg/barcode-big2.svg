@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="329" height="113" viewBox="0 0 329 113">
+    <defs>
+        <rect id="b" width="287" height="160" rx="6"/>
+        <filter id="a" width="120.9%" height="137.5%" x="-10.5%" y="-14.4%" filterUnits="objectBoundingBox">
+            <feOffset dy="5" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="7.5"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter2"/>
+            <feGaussianBlur in="shadowOffsetOuter2" result="shadowBlurOuter2" stdDeviation="2.5"/>
+            <feColorMatrix in="shadowBlurOuter2" result="shadowMatrixOuter2" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="shadowMatrixOuter2"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="rotate(10 -34.543 197.575)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="#FCFCFC" xlink:href="#b"/>
+        </g>
+        <path fill="#323843" d="M50.354 30.2l6.894 1.215L36.41 149.592l-6.894-1.216zM65.126 32.804l6.894 1.216-18.407 104.39-6.893-1.216zM183.303 53.642l6.894 1.216-18.407 104.39-6.893-1.216zM79.898 35.409l6.894 1.215-18.407 104.39-6.893-1.215zM198.075 56.247l6.894 1.215-18.407 104.39-6.893-1.216zM94.67 38.014l6.894 1.215-18.407 104.39-6.893-1.216zM212.847 58.851l6.894 1.216-18.407 104.39-6.893-1.216zM109.443 40.618l6.893 1.216-18.406 104.39-6.894-1.216zM227.62 61.456l6.893 1.216-18.406 104.39-6.894-1.216zM124.215 43.223l6.893 1.216-18.406 104.39-6.894-1.216zM242.392 64.06l6.893 1.216-18.406 104.39-6.894-1.215zM138.987 45.828l6.894 1.215-18.407 104.39-6.894-1.216zM257.164 66.666l6.893 1.215-18.406 104.39-6.894-1.216zM153.759 48.433l6.894 1.215-18.407 104.39-6.894-1.216zM271.936 69.27l6.894 1.216-18.407 104.39-6.894-1.216zM168.531 51.037l6.894 1.216-20.838 118.177-6.894-1.216zM286.708 71.875l6.894 1.216-20.838 118.177-6.894-1.216z"/>
+    </g>
+</svg>
