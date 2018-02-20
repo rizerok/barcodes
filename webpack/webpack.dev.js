@@ -20,13 +20,13 @@ module.exports = {
                     fallback: 'style-loader',
                     use:[{
                         loader: 'css-loader',
-                        options: {
-                            sourceMap:true,
-                            modules: true,
-                            importModules:2,
-                            //https://github.com/webpack/loader-utils#interpolatename
-                            localIdentName: '[path][name]-[local]-[hash:base64:3]'
-                        }
+                        // options: {
+                        //     sourceMap:true,
+                        //     modules: true,
+                        //     importModules:2,
+                        //     //https://github.com/webpack/loader-utils#interpolatename
+                        //     localIdentName: '[path][name]-[local]-[hash:base64:3]'
+                        // }
                     },
                     {
                         loader:'postcss-loader',
@@ -49,10 +49,7 @@ module.exports = {
                     fallback: 'style-loader',
                     use:[{
                         loader: 'css-loader',
-                        options: {
-                            sourceMap:true,
-                            importModules:2
-                        }
+
                     },
                     {
                         loader:'postcss-loader',

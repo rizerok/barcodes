@@ -11,10 +11,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Barcodes</title>
-    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400,400i,700,700i" rel="stylesheet">
     <% for (let key in htmlWebpackPlugin.files.css) { %>
-    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[key] %>"><% } %>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[key].replace('\\','/') %>"><% } %>
 </head>
 <body>
 <div class="page">
@@ -63,31 +63,31 @@
                             <ul class="screen1__logo-list">
                                 <% let logos = [
                                     {
-                                        src: '/assets/img/svg/amazon.svg',
+                                        src: 'assets/img/svg/amazon.svg',
                                         alt: 'Amazon'
                                     },
                                     {
-                                        src: '/assets/img/svg/ebay.svg',
+                                        src: 'assets/img/svg/ebay.svg',
                                         alt: 'Ebay'
                                     },
                                     {
-                                        src: '/assets/img/svg/itunes.svg',
+                                        src: 'assets/img/svg/itunes.svg',
                                         alt: 'itunes'
                                     },
                                     {
-                                        src: '/assets/img/svg/tmall.svg',
+                                        src: 'assets/img/svg/tmall.svg',
                                         alt: 'tmall'
                                     },
                                     {
-                                        src: '/assets/img/svg/rakuten.svg',
+                                        src: 'assets/img/svg/rakuten.svg',
                                         alt: 'racuten'
                                     },
                                     {
-                                        src: '/assets/img/svg/flipkart.svg',
+                                        src: 'assets/img/svg/flipkart.svg',
                                         alt: 'flipkart'
                                     },
                                     {
-                                        src: '/assets/img/svg/etsy.svg',
+                                        src: 'assets/img/svg/etsy.svg',
                                         alt: 'Etsy'
                                     }
                                 ]; %>

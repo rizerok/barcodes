@@ -8,13 +8,12 @@ const rupture = require('rupture');
 
 let extractStylus = new ExtractTextPlugin({
     filename:path.join('bundle','[name].css')
+
 });
 
 module.exports = {
     output:{
-        library:'lib',
-        libraryTarget:'umd',
-        libraryExport: 'default'
+        publicPath: '/sites/barcodes/'
     },
     module:{
         rules:[
@@ -28,7 +27,7 @@ module.exports = {
                         options: {
                             importLoaders: 2,
                             minimize:true,
-                            modules: true,
+                            modules: false,
                             localIdentName: '[hash:base64:8]'
                         }
                     },
@@ -54,10 +53,9 @@ module.exports = {
                     use: [{
                         loader: 'css-loader',
                         options: {
-                            importLoaders: 2,
                             minimize:true,
-                            modules: true,
-                            localIdentName: '[hash:base64:8]'
+                            sourceMap:true,
+                            importModules:2
                         }
                     },
                         {
