@@ -7,6 +7,8 @@
 		height:100%;
 	&__left
 		width: (100% /12 * 7);
+		+below($breakpoints.sm)
+			display: none;
 	&__left-img
 		width:342px;
 		height:253px;
@@ -21,6 +23,10 @@
 		height:253px;
 		padding-top: 14px;
 		width: (100% /12 * 5);
+		+below($breakpoints.sm)
+			width: 100%;
+			height:auto;
+			margin-bottom: 40px;
 	&__top
 		flex-grow:1;
 		display: flex;
@@ -31,8 +37,16 @@
 		justify-content: space-between;
 		& > * + *
 			margin-left: 20px;
+		+below($breakpoints.sm)
+			flex-wrap: wrap;
+			height: auto;
+			& > * + *
+				margin-left: 0;
+				margin-top: 30px;
 	&__bottom-item
 		max-width: 350px;
+		+below($breakpoints.sm)
+			width:100%;
 	&__bottom-item-icon
 		width: 50px;
 		height: 50px;

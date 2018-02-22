@@ -1,8 +1,17 @@
 .header
-	position:fixed;
+	position:absolute;
+	top:2em;
+	z-index:3;
 	width: calc(100% + 17px);
+	transition: background-color $glb-anim-drt;
+	&.is-moved
+		position: fixed;
+		background-color: rgba(47, 32, 101, 0.95);
+		top:0;
+		.button-simple
+			display: block;
 	&__area
-		height: 10em;
+		height: 6em;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -10,11 +19,23 @@
 		display: flex;
 		align-items: center;
 	&__right
-		position:absolute;
-		right:3em;
 		height: 100%;
 		display: flex;
 		align-items: center;
+		& > *+*
+			margin-left: 30px;
+		.button-simple
+			display: none;
+			+below($breakpoints.sm)
+				display: block;
+				height:60px;
+				position: fixed;
+				bottom:0;
+				left:0;
+				right:0;
+				width:100%;
+				border-radius: 0;
+				margin-left:0;
 
 
 .logo-title
@@ -36,5 +57,10 @@
 	display: flex;
 	align-items: center;
 	font-size: 14px
+	+below($breakpoints.sm)
+		display:none;
 	& > * + *
 		margin-left:25px;
+	li:hover
+		color: #3ddf9e;;
+		cursor: pointer;

@@ -1,22 +1,27 @@
-.m-text-italic{
+.m-text-italic
 	font-family: $font-second;
 	font-style: italic;
 	font-weight: normal;
-}
+	+below($breakpoints.sm)
+		font-family:inherit;
+		font-style: inherit;
+		font-weight: inherit;
 
-.bold{
+.bold
 	font-weight: bold;
-}
 
-.title{
+
+.title
 	font-size: 3.5em;
 	font-style: normal;
 	font-stretch: normal;
 	line-height: 1.29;
 	letter-spacing: normal;
-}
+	+below($breakpoints.sm)
+		font-weight:bold;
+		font-size: 2.5em;
 
-.description{
+.description
 	font-family: $font-second;
 	font-size: 1.7em;
 	font-weight: normal;
@@ -24,11 +29,16 @@
 	font-stretch: normal;
 	line-height: 1.47;
 	letter-spacing: normal;
-}
+	+below($breakpoints.sm)
+		font-size: 1.8em;
+		line-height: 1.67;
+		p
+			display: inline;
 
-.title + .description{
+
+.title + .description
 	margin-top: 15px;
-}
+
 
 .ju_sb
 	justify-content: space-between;
