@@ -46,7 +46,7 @@
 		width:20px;
 		height:20px;
 		object-fit: contain;
-		background:url(/assets/img/svg/arrow-mini-white.svg)
+		background:url(/assets/img/svg/arrow-mini-white.svg);
 		transition: transform $glb-anim-drt;
 	&:hover:after
 		transform: translate(50%,-50%)
@@ -65,8 +65,11 @@
 	color: #ffffff;
 	position: relative;
 	cursor: pointer;
-	&:hoover
+	&:hover
 		background-color:darken(#f5656d, 10%);
+	&.is-hidden
+		+below($breakpoints.sm)
+			display:none !important;
 
 .button2
 	width: 195px;

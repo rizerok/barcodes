@@ -46,6 +46,7 @@
     "> 1%"
   ],
   "dependencies": {
+    "animated-scroll-to": "^1.1.8",
     "whatwg-fetch": "^2.0.3"
   }
 }

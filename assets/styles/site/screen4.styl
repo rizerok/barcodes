@@ -1,90 +1,155 @@
 .screen4
-	background-color: #6573f5;
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	height: auto;
+	//min-height: 100vh;
+	z-index: 1;
+	background-color: #6573f5;
+	padding-top:0 !important;
+	//&:after
+	//	content:'';
+	//	position: absolute;
+	//	bottom: 238px;
+	//	top:0;
+	//	left:0;
+	//	right:0;
+	//	z-index: 3;
+	//	background-color: #6573f5;
 	&__area
+		background-color: #6573f5;
 		flex-grow: 1;
 		display: flex;
+		padding-bottom: 55px;
+		position: relative;
+		z-index: 4;
+		+below($breakpoints.sm)
+			padding-top: 30px;
 	&__middle
 		width: 100%;
 	&__header
 		margin-top: 170px;
-		margin-bottom: 26px;
+		margin-bottom: 25px;
+		+below($breakpoints.sm)
+			margin-top: 0;
 	&__faq
 		margin-top: -10px;
-		margin-left: -20px;
+		margin-left: -10px;
+		margin-right: -10px;
 		display: flex;
-		flex-direction: column;
 		flex-grow: 1;
 		width:100%;
+		flex-wrap: wrap;
+	&__faq-item-container
+		margin-top:10px;
+		padding-left: 10px;
+		padding-right: 10px;
+		width: 50%;
+		+below($breakpoints.sm)
+			width: 100%;
 	&__faq-item
-		margin-top: 10px;
-		margin-left: 20px;
 		border-radius: 4px;
 		background-color: #ffffff;
 		box-shadow: 0 25px 30px 0 rgba(0, 0, 0, 0.15);
-		width: 50%;
-		padding:12px 20px;
+
 	&__faq-item-top
 		width: 100%;
 		display: flex;
 		align-item: center;
 		justify-content: space-between;
+		padding:12px 20px;
+		cursor: pointer;
 	&__faq-item-title
 		font-size: 15px;
 		color: #5970a0;
 		font-weight: 500;
 		line-height: 1.33;
+		transition: color .3s;
 	&__faq-item-arrow
 		width:20px;
 		height:20px;
 		transform: rotate(0);
 		transition: transform;
+	&__faq-item-content
+		will-change:height;
+		height:0;
+		overflow: hidden;
+		transition: height .3s;
 	&__faq-item-text
-		display: none;
-		padding-top: 12px;
+		padding:0 20px 12px;
 		font-size: 14px;
+		line-height:1.43;
 		color: #5970a0;
 		padding-bottom: 13px;
-
+	&__faq-item-arrow
+		transition: transform .3s;
 	&__faq-item.is-open
 		this = '.screen4'
 		{this}__faq-item-title
 			color: #f5656d;
 		{this}__faq-item-arrow
 			transform: rotate(180deg)
-		{this}__faq-item-text
-			display:block;
 
 	&__footer
-		background-color: #292b41;
 		height: 138px;
-		position: relative;
+		background-color: #292b41;
+		position: fixed;
+		left:0;
+		right:0;
+		bottom:0;
 		z-index: 2;
+		+below($breakpoints.sm)
+			height: auto;
+			padding-bottom: 45px;
+		&.is-hidden
+			display: none;
+
+	&__footer-container
+		height: 238px;
+
 	&__footer-area
 		height:100%
 		display:flex;
 		justify-content: space-between;
 		align-items: center;
+		padding-top: 35px;
+		+below($breakpoints.sm)
+			flex-wrap: wrap;
+			justify-content: center;
+
 	&__footer-logo
-		width:62px;
-		height:48px;
-		path
-			fill:#3e4164;
+			width:62px;
+			height:48px;
+			path
+				fill:#3e4164;
 
 	&__footer-email
 		color: #3ddf9e;
 		font-size: 14px;
+		+below($breakpoints.sm)
+			padding-top: 10px;
 
 	&__footer-address
 		font-size: 13px;
 		line-height: 1.54;
 		text-align: right;
+		+below($breakpoints.sm)
+			text-align: center;
 
 	&__footer-item
 		min-width:300px;
 		max-height: 300px;
+		+below($breakpoints.sm)
+			min-width: auto;
+			max-width: none;
+			width:100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		+ .screen4__footer-item
+			+below($breakpoints.sm)
+				margin-top: 15px;
 
 	&__bottom-image
 		height:160px;
@@ -96,3 +161,6 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background:url(/assets/img/svg/barcode-big2.svg);
+		z-index:1;
+		+below($breakpoints.sm)
+			display: none;
