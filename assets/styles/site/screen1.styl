@@ -19,6 +19,7 @@
 		width: 50%;
 		+below($breakpoints.sm)
 			width:100%;
+			padding-right: 0;
 	&__top-right
 		padding-left: 1em;
 		width: 50%;
@@ -41,14 +42,16 @@
 			margin-top:3em;
 	&__logo-list
 		margin-top: -2em;
-		margin-left: -2em;
+		margin-left: -1em;
 		display: flex;
 		flex-wrap: wrap;
 		+below($breakpoints.sm)
 			margin-left: 0;
+			justify-content: center;
 	&__logo-list-item
 		margin-top: 2em;
-		margin-left:2em;
+		margin-left:1em;
+		margin-right:1em;
 		opacity: 0.55;
 		transition: opacity;
 		&:hover
@@ -157,19 +160,28 @@
 
 .customer-line
 	display: flex;
-	& > * + *
-		margin-left: 2em;
+	height: 50px;
+	position: relative;
+	//& > * + *
+	//	margin-left: 2em;
 	&__item
+		position: absolute;
+		top:0;
+		left:0;
 		padding: 10px;
-		width: 140px;
+		max-width: 140px;
+		min-width:140px;
 		height: 50px;
 		border-radius: 4px;
 		background-color: rgba(255, 255, 255, 0.25);
 		display: flex;
 		align-items: center;
+		transition: opacity $glb-anim-drt, transform $glb-anim-drt;
 		&_wait
 			background:transparent;
 			border:1px dashed #fff;
+		&_appear
+			opacity:0;
 	&__item-image
 		width:37px;
 		height: 30px;

@@ -11,6 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Barcodes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400,400i,700,700i" rel="stylesheet">
     <% for (let key in htmlWebpackPlugin.files.css) { %>
@@ -41,7 +42,7 @@
                         <li>FAQ</li>
                         <li>Contact</li>
                     </ul>
-                    <button class="button-simple">By now</button>
+                    <button class="button-simple">Buy now</button>
                 </nav>
             </div>
         </div>
@@ -119,15 +120,15 @@
                                 %>
                                 <%=line('Choose payment method', `
                                     <ul class="form__button-list">
-                                        <li class="form__button-list-item w250">
+                                        <li class="form__button-list-item w250 payment-method">
                                             ${buttonNumber(
-                                                '<svg xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">\n' +
+                                                '<svg xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14" data-val="paypal">\n' +
                                                 '    <path fill="#656FF5" fill-rule="nonzero" d="M33.938 0h-3.85a.535.535 0 0 0-.528.452l-1.556 9.88c-.03.194.12.37.317.37h1.975c.183 0 .34-.134.369-.316l.442-2.8a.534.534 0 0 1 .528-.453h1.218c2.536 0 3.998-1.227 4.38-3.662.173-1.064.009-1.901-.49-2.487C36.196.34 35.225 0 33.938 0zm.444 3.608c-.21 1.383-1.265 1.383-2.286 1.383h-.581l.407-2.582a.32.32 0 0 1 .317-.271h.266c.695 0 1.351 0 1.69.396.202.237.264.588.187 1.074zM6.486 0c1.287 0 2.258.34 2.806.984.497.586.662 1.423.49 2.487-.383 2.435-1.846 3.662-4.38 3.662H4.182a.535.535 0 0 0-.528.452l-.42 2.665a.535.535 0 0 1-.528.452H.869a.321.321 0 0 1-.317-.37L2.108.451A.535.535 0 0 1 2.638 0h3.848zm.444 3.608c.076-.486.015-.837-.187-1.074-.338-.396-.995-.396-1.69-.396h-.265a.321.321 0 0 0-.318.271l-.407 2.582h.581c1.02 0 2.076 0 2.286-1.383zm11.06-.044a.32.32 0 0 1 .317.371l-.996 6.316a.536.536 0 0 1-.529.45h-1.66a.321.321 0 0 1-.316-.37l.082-.513s-.91 1.055-2.551 1.055c-.957 0-1.76-.276-2.322-.938-.612-.721-.862-1.754-.686-2.835.339-2.166 2.078-3.71 4.114-3.71.888 0 1.778.193 2.177.773l.13.187.08-.515a.32.32 0 0 1 .317-.271h1.842zm-2.569 3.59c.081-.51-.03-.973-.312-1.304-.28-.33-.705-.503-1.229-.503-1.05 0-1.9.73-2.066 1.775-.086.513.016.973.29 1.296.274.325.702.498 1.237.498 1.066 0 1.902-.707 2.08-1.762zm30.021-3.59a.32.32 0 0 1 .317.371l-.996 6.316a.535.535 0 0 1-.528.45h-1.66a.321.321 0 0 1-.316-.37l.082-.513s-.91 1.055-2.552 1.055c-.956 0-1.759-.276-2.321-.938-.612-.721-.862-1.754-.686-2.835.338-2.166 2.078-3.71 4.115-3.71.888 0 1.777.193 2.176.773l.129.187.081-.515a.32.32 0 0 1 .317-.271h1.842zm-2.568 3.59c.08-.51-.03-.973-.313-1.304-.28-.33-.705-.503-1.228-.503-1.05 0-1.9.73-2.066 1.775-.087.513.017.973.288 1.296.276.325.704.498 1.239.498 1.066 0 1.902-.707 2.08-1.762zm-15.068-3.59c.259 0 .41.29.264.504l-6.161 8.9a.536.536 0 0 1-.44.23h-1.85a.321.321 0 0 1-.263-.507l1.918-2.71-2.04-5.993a.322.322 0 0 1 .304-.424h1.821c.236 0 .445.155.513.382l1.083 3.62 2.555-3.768a.536.536 0 0 1 .443-.234h1.853zM47.615.27A.322.322 0 0 1 47.93 0h1.779c.196 0 .347.177.316.371l-1.557 9.88a.535.535 0 0 1-.528.45h-1.59a.32.32 0 0 1-.316-.37L47.615.27z"/>\n' +
                                                 '</svg>\n')}
                                         </li>
-                                        <li class="form__button-list-item w250">
+                                        <li class="form__button-list-item w250 payment-method">
                                             ${buttonNumber(
-                                                '<svg xmlns="http://www.w3.org/2000/svg" width="38" height="15" viewBox="0 0 38 15">\n' +
+                                                '<svg xmlns="http://www.w3.org/2000/svg" width="38" height="15" viewBox="0 0 38 15" data-val="stripe">\n' +
                                         '    <path fill="#849BC9" fill-rule="nonzero" d="M2.53 5.886c0-.38.378-.57.884-.57.759 0 1.77.254 2.53.697V3.608C5.12 3.29 4.235 3.1 3.413 3.1 1.391 3.101 0 4.177 0 6.013 0 8.797 3.794 8.29 3.794 9.557c0 .443-.38.633-.949.633-.822 0-1.897-.38-2.719-.823v2.405c.949.38 1.834.57 2.72.57 2.086 0 3.477-1.013 3.477-2.848.063-3.038-3.794-2.469-3.794-3.608zm15.743 6.266h2.529v-8.86h-2.53v8.86zm-8.6-10.95l-2.465.507v7.975c0 1.519 1.138 2.595 2.592 2.595.822 0 1.455-.127 1.77-.317V9.937c-.315.126-1.896.57-1.896-.886V5.443h1.897V3.291H9.674V1.203zm5.312 2.849l-.063-.76h-2.276v8.86h2.529V6.14c.632-.76 1.707-.633 2.023-.506V3.29c-.316-.126-1.58-.316-2.213.76zm3.288-1.456l2.529-.506V0l-2.53.506v2.089zM38 7.722c0-2.595-1.265-4.62-3.667-4.62-2.403 0-3.857 2.025-3.857 4.62 0 3.037 1.707 4.557 4.173 4.557 1.201 0 2.086-.254 2.782-.697V9.62c-.696.38-1.454.57-2.466.57-1.012 0-1.834-.38-1.96-1.582h4.932C38 8.48 38 7.975 38 7.722zm-4.995-.95c0-1.14.695-1.582 1.328-1.582.632 0 1.264.443 1.264 1.582h-2.592zm-6.639-3.67c-1.012 0-1.58.442-1.96.822l-.063-.633h-2.276V15l2.529-.443v-2.848c.379.253.885.633 1.77.633 1.834 0 3.478-1.456 3.478-4.684-.064-2.911-1.708-4.557-3.478-4.557zm-.632 6.961c-.57 0-.949-.19-1.202-.506V5.823c.253-.317.633-.507 1.202-.507.948 0 1.58 1.013 1.58 2.342 0 1.393-.632 2.405-1.58 2.405z"/>\n' +
                                         '</svg>')}
                                         </li>
@@ -135,28 +136,28 @@
                                 `) %>
                                 <%=line('Select the needed quantity', `
                                     <ul class="form__button-list ju_sb">
-                                        <li class="form__button-list-item">
+                                        <li class="form__button-list-item quantity">
                                             ${buttonNumber(5)}
                                         </li>
-                                        <li class="form__button-list-item">
+                                        <li class="form__button-list-item quantity">
                                             ${buttonNumber(10)}
                                         </li>
-                                        <li class="form__button-list-item">
+                                        <li class="form__button-list-item quantity">
                                             ${buttonNumber(50)}
                                         </li>
-                                        <li class="form__button-list-item">
+                                        <li class="form__button-list-item quantity">
                                             ${buttonNumber(250)}
                                         </li>
-                                        <li class="form__button-list-item">
+                                        <li class="form__button-list-item quantity">
                                             ${buttonNumber(500)}
                                         </li>
-                                        <li class="form__button-list-item">
+                                        <li class="form__button-list-item quantity">
                                             ${buttonNumber(1000)}
                                         </li>
                                     </ul>
                                 `) %>
                                 <%=line(`Enter email <span class="marker-waikawa-gray">(for send codes after purchase)</span>`,
-                                    input('','','samplename@hello.com')
+                                    input('','email','samplename@hello.com')
                                 ) %>
                             </ol>
                             <div class="form__bottom">
@@ -190,27 +191,6 @@
                         </svg>
                         <div class="customer-line__item-wait-text">
                             Waiting happy<br>customer
-                        </div>
-                    </div>
-                    <div class="customer-line__item">
-                        <div class="customer-line__item-image">
-                            <svg width="37px" height="30px" viewBox="0 0 37 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <g id="invoice/default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-10.000000, -10.000000)">
-                                    <g id="item">
-                                        <g id="upc-codes" transform="translate(10.000000, 6.000000)">
-                                            <g id="ups" transform="translate(0.000000, 4.000000)">
-                                                <rect id="substrate" fill="#FFFFFF" x="0" y="0" width="37" height="30" rx="4"></rect>
-                                                <path d="M6,6 L9,6 L9,24 L6,24 L6,6 Z M19,6 L22,6 L22,24 L19,24 L19,6 Z M28,6 L31,6 L31,24 L28,24 L28,6 Z M11,6 L13,6 L13,24 L11,24 L11,6 Z M15,6 L17,6 L17,24 L15,24 L15,6 Z M24,6 L26,6 L26,24 L24,24 L24,6 Z" id="stripes" fill="#5970A0"></path>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                            <div class="customer-line__count">500</div>
-                        </div>
-                        <div class="customer-line__item-text">
-                            <div class="customer-line__item-time">12:25</div>
-                            <div class="customer-line__item-id">#1030</div>
                         </div>
                     </div>
                 </div>
@@ -357,10 +337,51 @@
                     </h1>
                 </div>
                 <div class="screen4__faq">
+                    <%
+                        let faqList = [
+                            {
+                                title: 'How many codes do I need?',
+                                description: 'You need one code for each product \'variation\', such as size and color. For example, 2 t-shirt designs, 5 sizes each and 2 colours each, will require 20 codes (2 * 5 * 2).'
+                            },
+                            {
+                                title: 'What do I get?',
+                                description: 'You will receive by email UPC-A (12 digits) codes AND EAN-13 (13 digits) codes, both are variant of the same code. Each code is accompanied by graphics of the corresponding barcode.'
+                            },
+                            {
+                                title: 'Will these work for any product?',
+                                description: 'Our codes will work for all products but books and pharma, but ok for health products such as protein powders, etc.'
+                            },
+                            {
+                                title: 'Will these work in any country?',
+                                description: 'Absolutely, our codes will work worldwide, online and in retail.'
+                            },
+                            {
+                                title: 'Do the codes have a country prefix?',
+                                description: '<p>The prefix is simply an indication of which country the barcode originates in but is not at all a condition to sell in a country. GS1 explains <a href="http://www.gs1.org/company-prefix">"since GS1 member companies can manufacture products anywhere in the world, GS1 prefixes do not identify the country of origin for a given product."</a>  We have people using our codes with US prefix to sell in the UK in Waitrose and Debenhams for example, or products "made in France" in France. If someone say they will sell you codes with an UK prefix it will not be legit, as only US companies were once allowed to resell their codes. See also <a href="http://www.foodmag.com.au/features/debunking-the-urban-myth-about-gs1-barcodes">here</a> and <a href="http://www.dailymail.co.uk/news/article-3481480/Can-REALLY-tell-country-food-coming-based-two-numbers-barcode.html">here</a>.</p>'
+                            },
+                            {
+                                title: 'How are they registered?',
+                                description: 'We don\'t need information about your product, price or company, you use the codes to register directly your products with your distributor (e.g. Amazon, CD Baby, supermarkets, grocery stores, etc). They will link the information as well as price to the code for you.'
+                            },
+                            {
+                                title: 'Do I need to print the barcodes?',
+                                description: 'If you sell products online you should only need the numbers, however if you sell through a distributor instead of sending the products directly, you may need to print the barcodes on stickers, which you can do with the images we provide you with your order, or by using our printing service.'
+                            },
+                            {
+                                title: 'Refund policy?',
+                                description: 'Since this item is a digital download all sales are final. If unsure buy one, try it, and if you purchase at least 100 more we\'ll reimburse the first one.'
+                            },
+                            {
+                                title: 'Anything else?',
+                                description: 'Just ask on our contact page'
+                            }
+                        ]
+                    %>
+                    <% faqList.forEach((item) => { %>
                     <div class="screen4__faq-item">
                         <div class="screen4__faq-item-top">
                             <div class="screen4__faq-item-title">
-                                <span>How many codes do i need?</span>
+                                <span><%=item.title %></span>
                             </div>
                             <div class="screen4__faq-item-arrow">
                                 <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -373,29 +394,11 @@
                             </div>
                         </div>
                         <div class="screen4__faq-item-text">
-                            Absolutely, our codes will work worldwide, online and in retail.
+                            <%=item.description %>
                         </div>
                     </div>
+                    <% }) %>
 
-                    <div class="screen4__faq-item is-open">
-                        <div class="screen4__faq-item-top">
-                            <div class="screen4__faq-item-title">
-                                <span>How many codes do i need?</span>
-                            </div>
-                            <div class="screen4__faq-item-arrow">
-                                <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <g id="icon/arrow-mini-blue" fill="#849BC9" fill-rule="nonzero">
-                                            <polygon id="arrow-mini-blue-ico" points="14.59 7 10 11.58 5.41 7 4 8.41 10 14.41 16 8.41"></polygon>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="screen4__faq-item-text">
-                            Absolutely, our codes will work worldwide, online and in retail.
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

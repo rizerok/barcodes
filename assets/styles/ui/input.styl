@@ -1,3 +1,17 @@
+placeholder($color)
+	&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color: $color;
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+		color: $color;
+	}
+	&:-ms-input-placeholder { /* IE 10+ */
+		color: $color;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		color: $color;
+	}
+
 .input
 	width: 100%;
 	padding: 6px 10px;
@@ -12,18 +26,7 @@
 	border-radius: 2px;
 	background-color: #ffffff;
 	border: solid 1px #849bc9;
-	&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-		color: #849bc9;
-	}
-	&::-moz-placeholder { /* Firefox 19+ */
-		color: #849bc9;
-	}
-	&:-ms-input-placeholder { /* IE 10+ */
-		color: #849bc9;
-	}
-	&:-moz-placeholder { /* Firefox 18- */
-		color: #849bc9;
-	}
+	placeholder(#849bc9)
 	&:focus
 		color: #656ff5;
 		border: solid 1px #656ff5;
@@ -31,9 +34,11 @@
 		box-shadow: 0 0 2px 1px #656ff5;
 		border: solid 1px #849bc9;
 		color: #849bc9;
+		placeholder(#849bc9)
 	&.is-value
 		color: #656ff5;
 	&.is-error
 		color: #f5656d;
 		background-color: #fef0f0;
 		border: solid 1px #f5656d;
+		placeholder(#f5656d)

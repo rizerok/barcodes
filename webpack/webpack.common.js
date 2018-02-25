@@ -56,7 +56,8 @@ module.exports = {
     devServer:{
         port:3001,
         open:true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        host:'192.168.1.212'
     },
     plugins:[
         new CleanWebpackPlugin(

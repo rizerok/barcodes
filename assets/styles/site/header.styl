@@ -3,6 +3,8 @@
 	top:2em;
 	z-index:3;
 	width: calc(100% + 17px);
+	+below($breakpoints.sm)
+		width:100%;
 	transition: background-color $glb-anim-drt;
 	&.is-moved
 		position: fixed;
