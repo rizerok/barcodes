@@ -58,18 +58,18 @@ module.exports = {
                             importModules:2
                         }
                     },
-                        {
-                            loader: 'postcss-loader',
-                            options:{
-                                sourceMap: true
-                            }
-                        },
-                        {
-                            loader:'stylus-loader',
-                            options:{
-                                use:[rupture()]
-                            }
-                        }]
+                    {
+                        loader: 'postcss-loader',
+                        options:{
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader:'stylus-loader',
+                        options:{
+                            use:[rupture()]
+                        }
+                    }]
                 })
             }
         ]
