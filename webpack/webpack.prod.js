@@ -25,6 +25,7 @@ module.exports = {
                     use: [{
                         loader: 'css-loader',
                         options: {
+                            root:'/sites/barcodes/',
                             importLoaders: 2,
                             minimize:true,
                             modules: false,
@@ -53,6 +54,7 @@ module.exports = {
                     use: [{
                         loader: 'css-loader',
                         options: {
+                            url: false,
                             minimize:true,
                             sourceMap:true,
                             importModules:2
