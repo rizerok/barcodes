@@ -129,6 +129,8 @@ setEvents(
 
 const emailInput = document.querySelector('.form .email');
 
+
+
 const inputStates = [
     'is-error',
     'is-required',
@@ -145,6 +147,11 @@ const setInputState = (input, idx) => {
 emailInput.addEventListener('input', () => {
     if(emailInput.value !== ''){
         setInputState(emailInput, [2]);
+    }
+});
+emailInput.addEventListener('keydown', (e) => {
+    if(e.keyCode === 13){
+        sendForm(e);
     }
 });
 
@@ -190,6 +197,10 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function randomDate(start, end) {
+    return new Date(start + Math.random() * (end - start));
+}
+
 class CustomerLine{
     constructor(){
         this.line = [];
@@ -206,6 +217,23 @@ class CustomerLine{
         setTimeout(this.adding,delay);
         if(window.innerWidth >= 840 ){
             this.add();
+        }
+    }
+    addingWithoutTimeout(quantity){
+        const MAX_DATE = (new Date()).getTime();
+        let maxDate = MAX_DATE;
+        let  minDate = (new Date()).getTime() - (60000 * quantity * 2);
+        let date = new Date(minDate);
+        for(let i = 0; i < quantity; i++){
+            if(window.innerWidth >= 840 ){
+                this.addWithoutAnimation(date);
+            }
+            let rand = getRandomInt(3, 6) * 60000;
+            minDate = date.getTime();
+            maxDate = date.getTime() + rand <= MAX_DATE
+                ? date.getTime() + rand
+                : MAX_DATE;
+            date = randomDate(minDate, maxDate);
         }
     }
     add(){
@@ -238,6 +266,26 @@ class CustomerLine{
             });
         });
     }
+    addWithoutAnimation(date){
+        const randQuantity = this.quantityVariants[getRandomInt(0, 5)];
+        const item = document.createElement('div');
+        item.classList.add('customer-line__item');
+        const data = date;
+        const minutes = data.getMinutes().toString().length === 1? '0' + data.getMinutes() : data.getMinutes();
+        const customer = this.createCustomer(randQuantity, `${data.getHours()}:${minutes}`, this.currentCustomerId++);
+        item.innerHTML = customer;
+        if(this.line.length < 14){
+            this.line.push(item);
+        }else{
+            let r = this.line.shift();
+            r.parentNode.removeChild(r);
+            this.line.push(item);
+        }
+        for(let i = 0; i < this.line.length; i++){
+            this.line[i].style.transform = `translateX(${(this.line.length - i) * 160}px)`;
+        }
+        this.container.appendChild(item);
+    }
     createCustomer(quantity, time, id){
         return `
             <div class="customer-line__item-image">
@@ -264,7 +312,7 @@ class CustomerLine{
 }
 
 const customerLine = new CustomerLine();
-
+customerLine.addingWithoutTimeout(14);
 customerLine.adding();
 
 
