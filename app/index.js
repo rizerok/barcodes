@@ -43,17 +43,17 @@ const setHeaderState = (scrolled) =>  {
         header.classList.remove('is-moved');
     }
     if(window.innerHeight + scrolled >= screen4.offsetTop ){
-        if(!buttonBuyNow.classList.contains('is-hidden')){
-            buttonBuyNow.classList.add('is-hidden');
-        }
+        // if(!buttonBuyNow.classList.contains('is-hidden')){
+        //     buttonBuyNow.classList.add('is-hidden');
+        // }
         if(footer.classList.contains('is-hidden')){
             footer.classList.remove('is-hidden');
         }
     }
     if(window.innerHeight + scrolled < screen4.offsetTop){
-        if(buttonBuyNow.classList.contains('is-hidden')){
-            buttonBuyNow.classList.remove('is-hidden');
-        }
+        // if(buttonBuyNow.classList.contains('is-hidden')){
+        //     buttonBuyNow.classList.remove('is-hidden');
+        // }
         if(!footer.classList.contains('is-hidden')){
             footer.classList.add('is-hidden');
         }
@@ -318,20 +318,28 @@ customerLine.adding();
 
 const faqItems = document.querySelectorAll('.screen4__faq-item');
 
+const toggleFaqItems = (el, forciblyClose) => {
+    const block = el.querySelector('.screen4__faq-item-content');
+    const text = el.querySelector('.screen4__faq-item-text');
+    const blockStyle = window.getComputedStyle(block);
+    if(blockStyle.getPropertyValue('height')==='0px' && !forciblyClose){
+        const height = text.offsetHeight;
+        block.style.height = `${height}px`;
+        el.classList.add('is-open');
+    }else{
+        block.style.height = '0px';
+        el.classList.remove('is-open');
+    }
+};
+
 faqItems.forEach((el) => {
     const top = el.querySelector('.screen4__faq-item-top');
     top.addEventListener('click', () => {
-        const block = el.querySelector('.screen4__faq-item-content');
-        const text = el.querySelector('.screen4__faq-item-text');
-        const blockStyle = window.getComputedStyle(block);
-        if(blockStyle.getPropertyValue('height')==='0px'){
-            const height = text.offsetHeight;
-            block.style.height = `${height}px`;
-            el.classList.add('is-open');
-        }else{
-            block.style.height = '0px';
-            el.classList.remove('is-open');
-        }
-
+        faqItems.forEach((el) =>{
+            toggleFaqItems(el,true);
+        });
+        toggleFaqItems(el);
     });
 });
+
+toggleFaqItems(faqItems[2]);
