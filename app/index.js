@@ -343,3 +343,45 @@ faqItems.forEach((el) => {
 });
 
 toggleFaqItems(faqItems[2]);
+
+const promocode = document.querySelector('.form__promocode-button span');
+const tooltip = document.querySelector('.tooltip');
+const tooltipButton = tooltip.querySelector('.tooltip__visual-state');
+const tooltipInput = tooltip.querySelector('.tooltip__input');
+
+const applyPromocode = () => {
+    formData.promocode = tooltipInput.value.trim().toUpperCase();
+    promocode.innerHTML = formData.promocode;
+    if(formData.promocode === ''){
+        formData.promocode = null;
+        promocode.innerHTML = 'Enter promocode';
+    }
+};
+
+tooltipButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    applyPromocode();
+});
+
+tooltipInput.addEventListener('keydown', (e) => {
+    if(e.keyCode === 13){
+        applyPromocode();
+    }
+});
+tooltipInput.addEventListener('input', (e) => {
+    if(tooltipInput.value.length > 22){
+        tooltipInput.value = tooltipInput.value.slice(0,20);
+    }
+});
+
+promocode.addEventListener('click', () => {
+    console.log(tooltip);
+    tooltip.classList.toggle('is-showed');
+    const fn = (e) => {
+        if(e.target !== tooltip && !tooltip.contains(e.target) && e.target !== promocode){
+            tooltip.classList.remove('is-showed');
+            window.removeEventListener('click', fn);
+        }
+    };
+    setTimeout(()=>window.addEventListener('click', fn));
+});
