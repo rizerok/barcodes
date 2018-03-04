@@ -42,3 +42,9 @@
 
 .ju_sb
 	justify-content: space-between;
+	+below($breakpoints.sm)
+		justify-content: flex-start;
+
+.mobile-hidden
+	+below($breakpoints.sm)
+		display: none;

@@ -12,9 +12,24 @@ const screen4 = document.querySelector('.screen4');
 const navButtons = document.querySelectorAll('.navigation li');
 const headerLeft = document.querySelector('.header__left');
 const footer = document.querySelector('.screen4__footer');
+const form = document.querySelector('.form');
+const formClose = document.querySelector('.form__close');
+const emailInput = document.querySelector('.form .email');
+
+formClose.addEventListener('click', () => {
+    screen1.classList.remove('is-active');
+    form.classList.remove('is-active');
+});
+
 
 buttonBuyNow.addEventListener('click', () => {
-    animateScrollTo(screen1.offsetTop);
+    if(window.innerWidth >= 840 ){
+        animateScrollTo(screen1.offsetTop);
+    }else{
+        screen1.classList.add('is-active');
+        form.classList.add('is-active');
+    }
+    emailInput.focus();
 });
 headerLeft.addEventListener('click', () => {
     animateScrollTo(screen1.offsetTop);
@@ -58,6 +73,34 @@ const setHeaderState = (scrolled) =>  {
             footer.classList.add('is-hidden');
         }
     }
+    if(scrolled <= 20 && header.classList.contains('is-moved')){
+        header.classList.remove('is-moved');
+    }
+    const offset = 100;
+    if(scrolled  >= screen1.offsetTop && scrolled - offset < screen2.offsetTop && !navButtons[0].classList.contains('is-active')){
+        navButtons.forEach((nb) => {
+            nb.classList.remove('is-active');
+        });
+        navButtons[0].classList.add('is-active');
+    }
+    if(scrolled + offset >= screen2.offsetTop && scrolled - offset < screen3.offsetTop&& !navButtons[1].classList.contains('is-active')){
+        navButtons.forEach((nb) => {
+            nb.classList.remove('is-active');
+        });
+        navButtons[1].classList.add('is-active');
+    }
+    if(scrolled + offset >= screen3.offsetTop && scrolled - offset - 500 < screen4.offsetTop && !navButtons[2].classList.contains('is-active')){
+        navButtons.forEach((nb) => {
+            nb.classList.remove('is-active');
+        });
+        navButtons[2].classList.add('is-active');
+    }
+    if(scrolled  + offset + 500 >= screen4.offsetTop  && !navButtons[3].classList.contains('is-active')){
+        navButtons.forEach((nb) => {
+            nb.classList.remove('is-active');
+        });
+        navButtons[3].classList.add('is-active');
+    }
 };
 
 setHeaderState(scrolled);
@@ -83,6 +126,7 @@ const formData = {
 const paymentMethodsEls = document.querySelectorAll('.payment-method');
 const quantityEls = document.querySelectorAll('.quantity');
 const totalValue = document.querySelector('.form__total-value');
+const buttonTotalValue = document.querySelector('.button__mobile-value');
 
 const setButtonsValue = (els,currentEl) => {
     els.forEach((pm2) => {
@@ -99,6 +143,8 @@ setButtonsValue(paymentMethodsEls,paymentMethodsEls[0]);
 setButtonsValue(quantityEls,quantityEls[0]);
 formData.quantity = +quantityEls[0].querySelector('.button-number span').textContent;
 totalValue.innerHTML = `$${formData.quantity }`;
+buttonTotalValue.innerHTML = `$${formData.quantity }`;
+
 
 const setEvents = (els, fnSetVal, fnValHandled) =>
     els.forEach((pm) => {
@@ -124,10 +170,9 @@ setEvents(
     (val) => {
         formData.quantity = val;
         totalValue.innerHTML = `$${val}`;
+        buttonTotalValue.innerHTML = `$${val}`;
     }
 );
-
-const emailInput = document.querySelector('.form .email');
 
 
 
@@ -166,10 +211,12 @@ const sendForm = (e) => {
     e.preventDefault();
     formData.email = emailInput.value;
     if(formData.email === ''){
+        emailInput.focus();
         highlightRequire(emailInput);
         return;
     }
     if(!/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(formData.email)){
+        emailInput.focus();
         highlightInvalid(emailInput);
         return;
     }
@@ -375,10 +422,10 @@ tooltipInput.addEventListener('input', (e) => {
 });
 
 promocode.addEventListener('click', () => {
-    console.log(tooltip);
     tooltip.classList.toggle('is-showed');
+    tooltipInput.focus();
     const fn = (e) => {
-        if(e.target !== tooltip && !tooltip.contains(e.target) && e.target !== promocode){
+        if(e.target !== tooltip && !tooltip.contains(e.target) && e.target !== promocode || e.target === tooltipButton){
             tooltip.classList.remove('is-showed');
             window.removeEventListener('click', fn);
         }

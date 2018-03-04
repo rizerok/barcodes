@@ -55,6 +55,14 @@
 		transition: transform $glb-anim-drt;
 	&:hover:after
 		transform: translate(50%,-50%)
+	&__desktop
+		display: inline;
+		+below($breakpoints.sm)
+			display: none;
+	&__mobile
+		display: none;
+		+below($breakpoints.sm)
+			display: inline;
 
 
 .button-simple

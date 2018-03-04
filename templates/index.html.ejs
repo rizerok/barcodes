@@ -106,8 +106,14 @@
                 <div class="screen1__top-right">
                     <div class="screen1__form-container">
 
-                        <form class="form" action="">
+                        <form class="form">
+                            <div class="form__close">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <path fill="#5970A0" fill-rule="nonzero" d="M10 8.586l5.293-5.293 1.414 1.414L11.414 10l5.293 5.293-1.414 1.414L10 11.414l-5.293 5.293-1.414-1.414L8.586 10 3.293 4.707l1.414-1.414z"/>
+                                </svg>
+                            </div>
                             <div class="form__body">
+                                <div class="form__title">UPC code's</div>
                                 <ol class="form__field-list">
                                     <% const line = (title, content) =>
                                             `<li class="form__line">
@@ -157,7 +163,7 @@
                                         </li>
                                     </ul>
                                 `) %>
-                                    <%=line(`Enter email <span class="marker-waikawa-gray">(for send codes after purchase)</span>`,
+                                    <%=line(`Enter email <span class="marker-waikawa-gray  mobile-hidden">(for send codes after purchase)</span>`,
                                             input('','email','samplename@hello.com')
                                     ) %>
                                 </ol>
@@ -176,7 +182,10 @@
                                         </div>
                                     </div>
                                     <div class="form__bottom-right">
-                                        <button class="button">Buy now</button>
+                                        <button class="button">
+                                            <span class="button__desktop">Buy now</span>
+                                            <span class="button__mobile">Buy for <span class="button__mobile-value"></span></span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -288,41 +297,44 @@
             </div>
             <div class="screen3__middle">
                 <div class="screen3__comments">
-
-                    <div class="screen3__comment">
-                        <div class="screen3__comment-top">
-                            <ul class="screen3__comment-top-rank">
-                                <li>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">
-                                        <path fill="#3DDF9E" fill-rule="evenodd" d="M10 14.75l-5.878 3.34 1.36-6.622L.489 6.91l6.719-.753L10 0l2.792 6.157 6.719.753-4.993 4.558 1.36 6.622z"/>
-                                    </svg>
-                                </li>
-                                <li>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">
-                                        <path fill="#3DDF9E" fill-rule="evenodd" d="M10 14.75l-5.878 3.34 1.36-6.622L.489 6.91l6.719-.753L10 0l2.792 6.157 6.719.753-4.993 4.558 1.36 6.622z"/>
-                                    </svg>
-                                </li>
-                                <li>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">
-                                        <path fill="#3DDF9E" fill-rule="evenodd" d="M10 14.75l-5.878 3.34 1.36-6.622L.489 6.91l6.719-.753L10 0l2.792 6.157 6.719.753-4.993 4.558 1.36 6.622z"/>
-                                    </svg>
-                                </li>
-                            </ul>
-                            <div class="screen3__comment-top-author">
-                                <span>Rosalie Cain</span>
+                    <% for(let i = 0; i < 6; i++){ %>
+                    <div class="screen3__comment-socket">
+                        <div class="screen3__comment">
+                            <div class="screen3__comment-top">
+                                <ul class="screen3__comment-top-rank">
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">
+                                            <path fill="#3DDF9E" fill-rule="evenodd" d="M10 14.75l-5.878 3.34 1.36-6.622L.489 6.91l6.719-.753L10 0l2.792 6.157 6.719.753-4.993 4.558 1.36 6.622z"/>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">
+                                            <path fill="#3DDF9E" fill-rule="evenodd" d="M10 14.75l-5.878 3.34 1.36-6.622L.489 6.91l6.719-.753L10 0l2.792 6.157 6.719.753-4.993 4.558 1.36 6.622z"/>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">
+                                            <path fill="#3DDF9E" fill-rule="evenodd" d="M10 14.75l-5.878 3.34 1.36-6.622L.489 6.91l6.719-.753L10 0l2.792 6.157 6.719.753-4.993 4.558 1.36 6.622z"/>
+                                        </svg>
+                                    </li>
+                                </ul>
+                                <div class="screen3__comment-top-author">
+                                    <span>Rosalie Cain</span>
+                                </div>
+                            </div>
+                            <div class="screen3__comment-description">
+                                The SaaS customer on-boarding process is based on 6 comprehensive aspects, the first five of which we’ve already covered
                             </div>
                         </div>
-                        <div class="screen3__comment-description">
-                            The SaaS customer on-boarding process is based on 6 comprehensive aspects, the first five of which we’ve already covered
-                        </div>
                     </div>
+                    <% } %>
 
                 </div>
 
             </div>
             <div class="screen3__actions">
                 <button class="button2">More reviews</button>
-                <button class="button3">
+                <a class="button3" href="mailto:support@verefied-upc.com?subject=Review&body=Rates (1/5):%0D%0AReview:%0D%0A">
                     <svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1033.000000, -2015.000000)">
                             <g id="reviews" transform="translate(0.000000, 1328.000000)" fill="#FFFFFF">
@@ -336,7 +348,7 @@
                             </g>
                         </g>
                     </svg>
-                </button>
+                </a>
             </div>
         </div>
     </div>

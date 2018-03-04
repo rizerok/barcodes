@@ -8,6 +8,12 @@
 	top: -65px;
 	z-index: 6;
 	display: none;
+	&.is-error
+		.tooltip__input
+			color: #f5656d;
+			background-color: #fef0f0;
+		.tooltip__visual-state
+			background-color: #f5656d;
 	&.is-showed
 		display: flex;
 	&:before
@@ -19,6 +25,11 @@
 		position: absolute;
 		bottom: - 10px;
 		left: 30px;
+		+below($breakpoints.sm)
+			left:100px;
+	+below($breakpoints.sm)
+		left:50%;
+		transform: translateX(-50%);
 
 	&__input
 		height: 35px;

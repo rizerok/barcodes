@@ -14,25 +14,27 @@
 		+below($breakpoints.sm)
 			margin-top: 0;
 			margint-bottom: 30px;
-	&__middle
-		flex-grow: 1;
+	//&__middle
+	//	flex-grow: 1;
 	&__comments
 		margin-top: -15px;
 		margin-left: -10px;
 		margin-right: -10px;
 		display: flex;
 		flex-wrap:wrap;
-	&__comment
+	&__comment-socket
+		margin-top: 15px;
+		padding-left: 10px;
+		padding-right: 10px;
 		width: 50%;
+		+below($breakpoints.sm)
+			width:100%;
+	&__comment
 		border-radius: 4px;
 		background-color: #ffffff;
 		padding: 25px 30px;
-		margin-top: 15px;
-		margin-left: 10px;
-		margin-right: 10px;
 		+below($breakpoints.sm)
-			width:100%;
-			padding: 20px 15px;
+			padding: 15px 15px;
 	&__comment-top
 		margin-bottom: 18px;
 		display:flex;
