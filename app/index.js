@@ -15,6 +15,29 @@ const footer = document.querySelector('.screen4__footer');
 const form = document.querySelector('.form');
 const formClose = document.querySelector('.form__close');
 const emailInput = document.querySelector('.form .email');
+const learnMore = document.querySelector('.screen3 .button2');
+
+
+const MAX_COMMENTS = 6;
+const allComments = [];
+let visibleComments = [];
+let hiddenComments = [];
+document.querySelectorAll('.screen3__comment-socket').forEach((c) => {
+    allComments.push(c);
+});
+
+visibleComments = allComments.slice(0,MAX_COMMENTS);
+hiddenComments = allComments.slice(MAX_COMMENTS, allComments.length);
+
+hiddenComments.forEach((hc) => {
+    hc.classList.add('is-hidden');
+});
+
+learnMore.addEventListener('click', () => {
+    hiddenComments.forEach((hc) => {
+        hc.classList.toggle('is-hidden');
+    });
+});
 
 formClose.addEventListener('click', () => {
     screen1.classList.remove('is-active');
@@ -432,3 +455,5 @@ promocode.addEventListener('click', () => {
     };
     setTimeout(()=>window.addEventListener('click', fn));
 });
+
+console.log(12);

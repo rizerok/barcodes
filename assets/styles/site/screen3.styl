@@ -2,6 +2,9 @@
 	background-color: #6573f5;
 	width:auto;
 	min-width: 100vw;
+	overflow: visible;
+	height:auto;
+	min-height: 100vh;
 	+below($breakpoints.sm)
 		padding-bottom: 45px;
 	&__area
@@ -27,6 +30,8 @@
 		padding-left: 10px;
 		padding-right: 10px;
 		width: 50%;
+		&.is-hidden
+			display: none;
 		+below($breakpoints.sm)
 			width:100%;
 	&__comment
@@ -59,7 +64,7 @@
 		color: #849bc9;
 	&__actions
 		margin-top: 58px;
-		margin-bottom: 97px;
+		margin-bottom: 20px;
 		display: flex;
 		justify-content:space-between;
 		&:before

@@ -54,10 +54,10 @@ module.exports = {
         ]
     },
     devServer:{
-        port:3001,
+        //port:3000,
         open:true,
         historyApiFallback: true,
-        host:'192.168.1.212'
+        //host:'192.168.1.212'
     },
     plugins:[
         new CleanWebpackPlugin(
