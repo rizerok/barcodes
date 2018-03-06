@@ -78,17 +78,6 @@ module.exports = {
     },
     devtool:'cheap-module-source-map',
     plugins:[
-        new HtmlWebpackPlugin({
-            inject:false,
-            template: path.resolve('templates','README.md.ejs'),
-            filename:path.resolve('README.md'),
-            info:{
-                name: pj.name,
-                version: pj.version,
-                description: pj.description,
-                repository:pj.repository.url
-            }
-        }),
         new webpack.optimize.UglifyJsPlugin({
             uglifyOptions:{
                 compress: {

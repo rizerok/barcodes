@@ -17,8 +17,9 @@ const formClose = document.querySelector('.form__close');
 const emailInput = document.querySelector('.form .email');
 const learnMore = document.querySelector('.screen3 .button2');
 
-
+const MOBILE_WIDTH = 840;
 const MAX_COMMENTS = 6;
+const MAX_COMMENTS_MOBILE = 3;
 const allComments = [];
 let visibleComments = [];
 let hiddenComments = [];
@@ -26,8 +27,14 @@ document.querySelectorAll('.screen3__comment-socket').forEach((c) => {
     allComments.push(c);
 });
 
-visibleComments = allComments.slice(0,MAX_COMMENTS);
-hiddenComments = allComments.slice(MAX_COMMENTS, allComments.length);
+if(window.innerWidth >= MOBILE_WIDTH){
+    visibleComments = allComments.slice(0,MAX_COMMENTS);
+    hiddenComments = allComments.slice(MAX_COMMENTS, allComments.length);
+}else{
+    visibleComments = allComments.slice(0,MAX_COMMENTS_MOBILE);
+    hiddenComments = allComments.slice(MAX_COMMENTS_MOBILE, allComments.length);
+}
+
 
 hiddenComments.forEach((hc) => {
     hc.classList.add('is-hidden');
@@ -37,6 +44,12 @@ learnMore.addEventListener('click', () => {
     hiddenComments.forEach((hc) => {
         hc.classList.toggle('is-hidden');
     });
+    if(learnMore.innerHTML === 'More reviews'){
+        learnMore.innerHTML = 'Less reviews';
+    }else{
+        learnMore.innerHTML = 'More reviews';
+    }
+
 });
 
 formClose.addEventListener('click', () => {
@@ -46,7 +59,7 @@ formClose.addEventListener('click', () => {
 
 
 buttonBuyNow.addEventListener('click', () => {
-    if(window.innerWidth >= 840 ){
+    if(window.innerWidth >= MOBILE_WIDTH ){
         animateScrollTo(screen1.offsetTop);
     }else{
         screen1.classList.add('is-active');
@@ -230,6 +243,7 @@ const highlightRequire = (input) => {
     setInputState(input, [1]);
 };
 
+
 const sendForm = (e) => {
     e.preventDefault();
     formData.email = emailInput.value;
@@ -243,6 +257,7 @@ const sendForm = (e) => {
         highlightInvalid(emailInput);
         return;
     }
+    //=============URL=================
     fetch('/addr',{
         method: 'POST',
         body: JSON.stringify(formData),
@@ -281,11 +296,18 @@ class CustomerLine{
         this.currentCustomerId = localStorage.getItem('currentCustomerId') || getRandomInt(200, 1500);
         this.adding = this.adding.bind(this);
     }
+    setOpacity(){  
+        const width = document.querySelector('.customer-line').offsetWidth;
+        const idx = Math.floor(width / 160);
+        for(let i = 0; i <= this.line.length-idx; i++){
+            this.line[i].style.opacity = '0.2'; 
+        }
+    }
     adding(){
         const randMinutes = getRandomInt(1, 5);
         const delay = randMinutes * 15000;
         setTimeout(this.adding,delay);
-        if(window.innerWidth >= 840 ){
+        if(window.innerWidth >= MOBILE_WIDTH ){
             this.add();
         }
     }
@@ -295,7 +317,7 @@ class CustomerLine{
         let  minDate = (new Date()).getTime() - (60000 * quantity * 2);
         let date = new Date(minDate);
         for(let i = 0; i < quantity; i++){
-            if(window.innerWidth >= 840 ){
+            if(window.innerWidth >= MOBILE_WIDTH ){
                 this.addWithoutAnimation(date);
             }
             let rand = getRandomInt(3, 6) * 60000;
@@ -335,6 +357,7 @@ class CustomerLine{
                 item.classList.remove('customer-line__item_appear');
             });
         });
+        this.setOpacity();
     }
     addWithoutAnimation(date){
         const randQuantity = this.quantityVariants[getRandomInt(0, 5)];
@@ -388,6 +411,7 @@ customerLine.adding();
 
 const faqItems = document.querySelectorAll('.screen4__faq-item');
 
+
 const toggleFaqItems = (el, forciblyClose) => {
     const block = el.querySelector('.screen4__faq-item-content');
     const text = el.querySelector('.screen4__faq-item-text');
@@ -402,17 +426,27 @@ const toggleFaqItems = (el, forciblyClose) => {
     }
 };
 
+
+
 faqItems.forEach((el) => {
     const top = el.querySelector('.screen4__faq-item-top');
     top.addEventListener('click', () => {
-        faqItems.forEach((el) =>{
-            toggleFaqItems(el,true);
-        });
+        if(window.innerWidth < MOBILE_WIDTH ){
+            faqItems.forEach((el) => {
+                toggleFaqItems(el,true);
+            });
+        }
         toggleFaqItems(el);
     });
 });
 
-toggleFaqItems(faqItems[2]);
+if(window.innerWidth >= MOBILE_WIDTH ){
+    faqItems.forEach((el) => {
+        toggleFaqItems(el);
+    });
+}else{
+    toggleFaqItems(faqItems[2]);
+}
 
 const promocode = document.querySelector('.form__promocode-button span');
 const tooltip = document.querySelector('.tooltip');
@@ -426,6 +460,21 @@ const applyPromocode = () => {
         formData.promocode = null;
         promocode.innerHTML = 'Enter promocode';
     }
+    //================URL==============
+    fetch('/addr',{
+        method: 'POST',
+        body: JSON.stringify(promocode),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then((resp) => {
+        if(resp.ok){
+            console.log('good',resp);
+        }else{
+            console.log('bad',resp);
+        }
+
+    });
 };
 
 tooltipButton.addEventListener('click', (e) => {
@@ -455,5 +504,3 @@ promocode.addEventListener('click', () => {
     };
     setTimeout(()=>window.addEventListener('click', fn));
 });
-
-console.log(12);

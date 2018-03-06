@@ -24,17 +24,19 @@
 		margin-left: -10px;
 		margin-right: -10px;
 		display: flex;
-		flex-wrap:wrap;
+		flex-wrap:wrap; 
 	&__comment-socket
 		margin-top: 15px;
 		padding-left: 10px;
 		padding-right: 10px;
 		width: 50%;
+		display: flex;
 		&.is-hidden
 			display: none;
 		+below($breakpoints.sm)
 			width:100%;
 	&__comment
+		width:100%;
 		border-radius: 4px;
 		background-color: #ffffff;
 		padding: 25px 30px;

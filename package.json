@@ -1,17 +1,13 @@
 {
   "name": "Barcodes",
   "version": "1.0.0",
-  "description": "Barcodes Barcodes",
+  "description": "",
   "main": "app/index.js",
   "scripts": {
     "build:dev": "webpack --progress --env=dev",
     "build:prod": "webpack --progress --env=prod",
     "watch:dev": "webpack-dev-server --env=dev --progress",
     "watch:prod": "webpack-dev-server --env=dev --progress"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rizerok/barcodes.git"
   },
   "author": "alex",
   "license": "ISC",

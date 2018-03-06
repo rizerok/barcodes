@@ -1,11 +1,15 @@
 Barcodes v1.0.0
 ===================
-Barcodes Barcodes
+
+Source:
+-------------------
+```/app/index.js``` - common js file;
+```/assets/styles/``` - stylus files;
+```/assets/images/``` - images;
 
 Install:
 -------------------
 ```sh
-git clone https://github.com/rizerok/barcodes.git .
 npm i
 ```
 
