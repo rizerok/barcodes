@@ -1,0 +1,25 @@
+.notification
+	height: 60px;
+	background-color: rgba(245, 101, 109, 0.97);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+	width: 100%;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 25px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index:11;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: translateY(-100%);
+	transition: transform $glb-anim-drt;
+	&.is-active
+		transform: translateY(0);
+	.cross
+		position: absolute;
+		cursor:pointer;
+		top: 20px;
+		right: 20px;

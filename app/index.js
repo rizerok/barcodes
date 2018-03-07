@@ -16,6 +16,13 @@ const form = document.querySelector('.form');
 const formClose = document.querySelector('.form__close');
 const emailInput = document.querySelector('.form .email');
 const learnMore = document.querySelector('.screen3 .button2');
+const notification = document.querySelector('.notification');
+const notificationCross = document.querySelector('.notification .cross');
+const formSuccess = document.querySelector('.form-success');
+const formSuccessNumber = document.querySelector('.form-success__number');
+const formSuccessEmail = document.querySelector('.form-success__email .email');
+const formSuccessButton = document.querySelector('.form-success__buy-again');
+const formSuccessClose = document.querySelector('.form-success__close');
 
 const MOBILE_WIDTH = 840;
 const MAX_COMMENTS = 6;
@@ -153,7 +160,7 @@ const paymentMethods = [
 ];
 
 const formData = {
-    paymentMethod: null,
+    paymentMethod: paymentMethods[1],
     quantity: null,
     email: null,
     promocode: null
@@ -243,6 +250,19 @@ const highlightRequire = (input) => {
     setInputState(input, [1]);
 };
 
+const notificationTimeout = null;
+
+formSuccessButton.addEventListener('click', () => {
+    form.classList.remove('is-hidden');
+    formSuccess.classList.remove('is-active');
+});
+
+formSuccessClose.addEventListener('click', () => {
+    form.classList.remove('is-hidden');
+    formSuccess.classList.remove('is-active');
+    screen1.classList.remove('is-active');
+    form.classList.remove('is-active');
+});
 
 const sendForm = (e) => {
     e.preventDefault();
@@ -266,14 +286,27 @@ const sendForm = (e) => {
         }
     }).then((resp) => {
         if(resp.ok){
-            console.log('good',resp);
+            //const data = resp.json();
+            let data = {
+                number:23001,
+                email: 'samplemail@yahoo.com'
+            };
+            form.classList.add('is-hidden');
+            formSuccess.classList.add('is-active');
+            formSuccessNumber.innerHTML = `#${data.number}`;
+            formSuccessEmail.innerHTML = data.email;
         }else{
-            console.log('bad',resp);
+            notification.classList.add('is-active');
+            clearTimeout(notificationTimeout);
+            setTimeout(() => notification.classList.remove('is-active'), 4000);
         }
-
     });
-    console.log(formData.email);
 };
+
+notificationCross.addEventListener('click', () => {
+    clearTimeout(notificationTimeout);
+    notification.classList.remove('is-active');
+});
 
 const sendButton = document.querySelector('.form__bottom-right button');
 sendButton.addEventListener('click',sendForm);
@@ -441,8 +474,10 @@ faqItems.forEach((el) => {
 });
 
 if(window.innerWidth >= MOBILE_WIDTH ){
-    faqItems.forEach((el) => {
-        toggleFaqItems(el);
+    window.addEventListener('load', () => {
+        faqItems.forEach((el) => {
+            toggleFaqItems(el);
+        });
     });
 }else{
     toggleFaqItems(faqItems[2]);
@@ -460,21 +495,6 @@ const applyPromocode = () => {
         formData.promocode = null;
         promocode.innerHTML = 'Enter promocode';
     }
-    //================URL==============
-    fetch('/addr',{
-        method: 'POST',
-        body: JSON.stringify(promocode),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then((resp) => {
-        if(resp.ok){
-            console.log('good',resp);
-        }else{
-            console.log('bad',resp);
-        }
-
-    });
 };
 
 tooltipButton.addEventListener('click', (e) => {
@@ -504,3 +524,27 @@ promocode.addEventListener('click', () => {
     };
     setTimeout(()=>window.addEventListener('click', fn));
 });
+
+const copyTextareaBtn = document.querySelector('.popup-review__copy-email');
+
+copyTextareaBtn.addEventListener('click', () => {
+    const copyTextarea = document.querySelector('.popup-review__email input');
+    copyTextarea.select();
+    const clone = copyTextarea.cloneNode();
+    document.execCommand('copy');
+    const parent = copyTextarea.parentNode;
+    parent.removeChild(copyTextarea);
+    parent.appendChild(clone);
+});
+
+const button3 = document.querySelector('.button3');
+const popupReview = document.querySelector('.popup-review');
+const popupReviewCross = document.querySelector('.popup-review__cross');
+
+button3.addEventListener('click', () => {
+    popupReview.classList.add('is-show');
+});
+popupReviewCross.addEventListener('click', () => {
+    popupReview.classList.remove('is-show');
+});
+

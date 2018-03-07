@@ -1,0 +1,56 @@
+.popup-review
+	position: fixed;
+	z-index: 10;
+	background: #fff;
+	padding: 20px 30px 0;
+	top: 0;
+	left:0;
+	right:0;
+	bottom: 0;
+	display: none;
+	&.is-show
+		display: block;
+	&__title
+		font-size: 23px;
+		line-height: 30px;
+		font-weight: bold;
+		color: #5970a0;
+		margin-bottom: 20px;
+	&__description
+		margin-bottom: 30px;
+		font-family: Volkhov;
+		font-size: 18px;
+		line-hieght: 30px;
+		color: #5970a0;
+	&__email
+		font-size: 19px;
+		font-weight: 500;
+		input
+			color: #f5656d;
+			width: 100%;
+	&__copy-email
+		cursor: pointer;
+		position: absolute;
+		bottom: 0;
+		left:0;
+		width: 100%;
+		height: 60px;
+		background-color: #3ddf9e;
+		color: #fff;
+		font-size: 17px;
+		font-weight: 900;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&:active
+			background-color: darken(#3ddf9e, 20%);
+	&__copy-email-icon
+		position: absolute;
+		right:30px;
+		top: 50%;
+		transform: translateY(-50%);
+	&__cross
+		position: absolute;
+		cursor:pointer;
+		top: 20px;
+		right: 30px;

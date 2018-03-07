@@ -99,6 +99,8 @@
 	display:flex;
 	align-items: center;
 	justify-content: center;
+	&.is-hidden
+		display: none;
 	&.is-active
 		+below($breakpoints.sm)
 			border-radius: 0;
@@ -240,6 +242,7 @@
 	position: relative;
 	//& > * + *
 	//	margin-left: 2em;
+
 	&__item
 		will-change: transform, opacity;
 		position: absolute;
@@ -289,3 +292,77 @@
 		margin-left: 15px;
 		font-size: 10px;
 		line-height: 1.5;
+
+.form-success
+	display: none;
+	width: 38em;
+	z-index:2;
+	position: relative;
+	height: 40em;
+	background: #fff;
+	flex-direction:column;
+	align-items: center;
+	justify-content: center;
+	padding: 30px 0 35px;
+	+below($breakpoints.sm)
+		border-radius: 0;
+		height: auto;
+		width: auto;
+		position: fixed;
+		top:0;
+		left:0;
+		bottom: 0;
+		right:0;
+	&.is-active
+		display: flex;
+	&__number
+		font-size: 13px;
+		font-weight: 500;
+		color: #5970a0;
+		line-height: 1.15;
+		margin-bottom: 10px;
+	&__title
+		line-height: 45px;
+		font-size: 35px;
+		font-weight: bold;
+		color: #3ddf9e;
+		margin-bottom: 10px;
+	&__email
+		font-size: 13px;
+		font-weight: 500;
+		line-height: 1.15;
+		color: #5970a0;
+		padding:0 20px 20px;
+		border-bottom: 1px solid #ecf0f7;;
+		margin-bottom: 35px;
+	&__icon
+		margin-bottom: 40px;
+	&__buy-again
+		width: 230px;
+		height: 45px;
+		border-radius: 22.5px;
+		background-color: #656ff5;
+		font-size: 17px;
+		font-weight: 900;
+		line-height: 1.47;
+		color: #ffffff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		cursor: pointer;
+		&:hover
+			background-color: darken(#656ff5, 10%);
+		svg
+			position: absolute;
+			right: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+	&__close
+		display: none;
+		+below($breakpoints.sm)
+			display: block;
+			position: absolute;
+			right: 30px;
+			top: 20px;
+			cursor:pointer;

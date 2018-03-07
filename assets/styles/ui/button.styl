@@ -83,7 +83,20 @@
 	&.is-hidden
 		+below($breakpoints.sm)
 			display:none !important;
-
+.header__right
+	.button-simple
+		+below($breakpoints.sm)
+			&:after
+				position: absolute;
+				top: 50%;
+				right: 20px;
+				transform: translate(0,-50%);
+				content:'';
+				width:20px;
+				height:20px;
+				object-fit: contain;
+				background:url(http://bashinsky.pro/sites/barcodes/assets/img/svg/arrow-mini-white.svg);
+				transition: transform $glb-anim-drt;
 .button2
 	width: 195px;
 	height: 55px;
