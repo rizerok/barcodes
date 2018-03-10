@@ -160,7 +160,7 @@ const paymentMethods = [
 ];
 
 const formData = {
-    paymentMethod: paymentMethods[1],
+    paymentMethod: paymentMethods[0],
     quantity: null,
     email: null,
     promocode: null
@@ -182,7 +182,7 @@ const setButtonsValue = (els,currentEl) => {
     });
 };
 
-setButtonsValue(paymentMethodsEls,paymentMethodsEls[0]);
+setButtonsValue(paymentMethodsEls,paymentMethodsEls[1]);
 setButtonsValue(quantityEls,quantityEls[0]);
 formData.quantity = +quantityEls[0].querySelector('.button-number span').textContent;
 totalValue.innerHTML = `$${formData.quantity }`;
@@ -464,24 +464,26 @@ const toggleFaqItems = (el, forciblyClose) => {
 faqItems.forEach((el) => {
     const top = el.querySelector('.screen4__faq-item-top');
     top.addEventListener('click', () => {
-        if(window.innerWidth < MOBILE_WIDTH ){
-            faqItems.forEach((el) => {
-                toggleFaqItems(el,true);
-            });
-        }
+        //if(window.innerWidth < MOBILE_WIDTH ){
+        faqItems.forEach((el) => {
+            toggleFaqItems(el,true);
+        });
+        //}
         toggleFaqItems(el);
     });
 });
 
-if(window.innerWidth >= MOBILE_WIDTH ){
-    window.addEventListener('load', () => {
-        faqItems.forEach((el) => {
-            toggleFaqItems(el);
-        });
-    });
-}else{
-    toggleFaqItems(faqItems[2]);
-}
+//if(window.innerWidth >= MOBILE_WIDTH ){
+// window.addEventListener('load', () => {
+//     faqItems.forEach((el) => {
+//         toggleFaqItems(el);
+//     });
+// });
+// }else{
+//     toggleFaqItems(faqItems[2]);
+// }
+
+toggleFaqItems(faqItems[2]);
 
 const promocode = document.querySelector('.form__promocode-button span');
 const tooltip = document.querySelector('.tooltip');
