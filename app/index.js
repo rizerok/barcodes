@@ -299,7 +299,9 @@ const sendForm = (e) => {
             formSuccessNumber.innerHTML = `#${data.number}`;
             formSuccessEmail.innerHTML = data.email;
         }else{
+            formLoader.classList.remove('is-show');
             notification.classList.add('is-active');
+            form.classList.remove('is-hidden');
             clearTimeout(notificationTimeout);
             setTimeout(() => notification.classList.remove('is-active'), 4000);
         }
