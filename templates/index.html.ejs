@@ -12,33 +12,36 @@
     <meta charset="UTF-8">
     <title>Barcodes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <meta property="og:image" content="assets/img/raster/metaIMG.png"/>
+    <link rel='shortcut icon' type='image/x-icon' href="favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400,400i,700,700i" rel="stylesheet">
     <% for (let key in htmlWebpackPlugin.files.css) { %>
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[key].replace('\\','/') %>"><% } %>
 </head>
 <body>
 <div class="popup-review">
-    <div class="popup-review__cross">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-            <path fill="#5970A0" fill-rule="nonzero" d="M10 8.586l5.293-5.293 1.414 1.414L11.414 10l5.293 5.293-1.414 1.414L10 11.414l-5.293 5.293-1.414-1.414L8.586 10 3.293 4.707l1.414-1.414z"/>
-        </svg>
+    <div class="popup-review__container">
+        <div class="popup-review__cross">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                <path fill="#5970A0" fill-rule="nonzero" d="M10 8.586l5.293-5.293 1.414 1.414L11.414 10l5.293 5.293-1.414 1.414L10 11.414l-5.293 5.293-1.414-1.414L8.586 10 3.293 4.707l1.414-1.414z"/>
+            </svg>
+        </div>
+        <div class="popup-review__title">
+            <span>Write a review</span>
+        </div>
+        <div class="popup-review__description">
+            <span>It is really very important  for us</span>
+        </div>
+        <div class="popup-review__email">
+            <input type="text" readonly value="support@verefied-upc.com">
+        </div>
+        <button class="popup-review__copy-email">
+            <span>Copy Email to clipboard</span>
+            <svg class="popup-review__copy-email-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                <path fill="#FFF" fill-rule="nonzero" d="M13 0H2C.9 0 0 .9 0 2v12h2V2h11V0zm5 4H7c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H7V6h11v12z"/>
+            </svg>
+        </button>
     </div>
-    <div class="popup-review__title">
-        <span>Write a review</span>
-    </div>
-    <div class="popup-review__description">
-        <span>It is really very important  for us</span>
-    </div>
-    <div class="popup-review__email">
-        <input type="text" readonly value="support@verefied-upc.com">
-    </div>
-    <button class="popup-review__copy-email">
-        <span>Copy Email to clipboard</span>
-        <svg class="popup-review__copy-email-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-            <path fill="#FFF" fill-rule="nonzero" d="M13 0H2C.9 0 0 .9 0 2v12h2V2h11V0zm5 4H7c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H7V6h11v12z"/>
-        </svg>
-    </button>
 </div>
 <div class="notification">
     <span>Oops, something went wrong!</span>
@@ -133,6 +136,13 @@
                 </div>
                 <div class="screen1__top-right">
                     <div class="screen1__form-container">
+                        <div class="form-loader">
+                            <div class="loader">
+                                <div class="css-owvjub"></div>
+                                <div class="css-1ro7c3h"></div>
+                                <div class="css-owvjub"></div>
+                            </div>
+                        </div>
                         <div class="form-success">
                             <div class="form-success__close">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">

@@ -366,3 +366,26 @@
 			right: 30px;
 			top: 20px;
 			cursor:pointer;
+
+.form-loader
+	display: none;
+	width: 38em;
+	z-index:2;
+	position: relative;
+	height: 40em;
+	background: #fff;
+	flex-direction:column;
+	align-items: center;
+	justify-content: center;
+	padding: 30px 0 35px;
+	+below($breakpoints.sm)
+		border-radius: 0;
+		height: auto;
+		width: auto;
+		position: fixed;
+		top:0;
+		left:0;
+		bottom: 0;
+		right:0;
+	&.is-show
+		display: flex;

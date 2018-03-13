@@ -1,13 +1,34 @@
 .popup-review
 	position: fixed;
 	z-index: 10;
-	background: #fff;
-	padding: 20px 30px 0;
+	display: none;
+	background-color: rgba(19, 26, 42, 0.7);
 	top: 0;
 	left:0;
 	right:0;
-	bottom: 0;
-	display: none;
+	bottom: 0
+	&__container
+		position: fixed;
+		background: #fff;
+		width: 460px;
+		padding: 20px 30px 33px;
+		top: 50%;
+		left: 50%;
+		bottom: auto;
+		right: auto;
+		transform: translate(-50%, -50%);
+		border-radius: 4px;
+		text-align: center;
+		+below($breakpoints.sm)
+			text-align: left;
+			border-radius: 0;
+			width:auto;
+			padding: 20px 30px 0;
+			top: 0;
+			left:0;
+			right:0;
+			bottom: 0
+			transform: none;
 	&.is-show
 		display: block;
 	&__title
@@ -15,40 +36,63 @@
 		line-height: 30px;
 		font-weight: bold;
 		color: #5970a0;
-		margin-bottom: 20px;
+		margin-bottom: 30px;
+		+below($breakpoints.sm)
+			margin-bottom: 20px;
 	&__description
 		margin-bottom: 30px;
 		font-family: Volkhov;
 		font-size: 18px;
 		line-hieght: 30px;
 		color: #5970a0;
+		display: none;
+		+below($breakpoints.sm)
+			display: block;
 	&__email
 		font-size: 19px;
 		font-weight: 500;
+		margin-bottom: 40px;
+		+below($breakpoints.sm)
+			margin-bottom: 40px;
 		input
 			color: #f5656d;
 			width: 100%;
+			text-align: center;
+			+below($breakpoints.sm)
+				text-align: left;
 	&__copy-email
+		position: relative;
 		cursor: pointer;
-		position: absolute;
-		bottom: 0;
-		left:0;
-		width: 100%;
-		height: 60px;
 		background-color: #3ddf9e;
 		color: #fff;
 		font-size: 17px;
 		font-weight: 900;
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		justify-content: center;
+		width: auto;
+		height: 45px;
+		border-radius: 22.5px;
+		padding-left: 30px;
+		padding-right: 50px;
 		&:active
 			background-color: darken(#3ddf9e, 20%);
+		+below($breakpoints.sm)
+			width: 100%;
+			height: 60px;
+			position: absolute;
+			bottom: 0;
+			left:0;
+			border-radius: 0;
+			padding-left: 0;
+			padding-right: 0;
 	&__copy-email-icon
 		position: absolute;
-		right:30px;
 		top: 50%;
 		transform: translateY(-50%);
+		right: 20px;
+		+below($breakpoints.sm)
+			right:30px;
 	&__cross
 		position: absolute;
 		cursor:pointer;

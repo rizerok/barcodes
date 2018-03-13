@@ -19,6 +19,7 @@ const learnMore = document.querySelector('.screen3 .button2');
 const notification = document.querySelector('.notification');
 const notificationCross = document.querySelector('.notification .cross');
 const formSuccess = document.querySelector('.form-success');
+const formLoader = document.querySelector('.form-loader');
 const formSuccessNumber = document.querySelector('.form-success__number');
 const formSuccessEmail = document.querySelector('.form-success__email .email');
 const formSuccessButton = document.querySelector('.form-success__buy-again');
@@ -278,6 +279,8 @@ const sendForm = (e) => {
         return;
     }
     //=============URL=================
+    formLoader.classList.add('is-show');
+    form.classList.add('is-hidden');
     fetch('/addr',{
         method: 'POST',
         body: JSON.stringify(formData),
@@ -291,7 +294,7 @@ const sendForm = (e) => {
                 number:23001,
                 email: 'samplemail@yahoo.com'
             };
-            form.classList.add('is-hidden');
+            formLoader.classList.remove('is-show');
             formSuccess.classList.add('is-active');
             formSuccessNumber.innerHTML = `#${data.number}`;
             formSuccessEmail.innerHTML = data.email;
@@ -542,6 +545,7 @@ copyTextareaBtn.addEventListener('click', () => {
 const button3 = document.querySelector('.button3');
 const popupReview = document.querySelector('.popup-review');
 const popupReviewCross = document.querySelector('.popup-review__cross');
+const popupReviewContainer = document.querySelector('.popup-review__container');
 
 button3.addEventListener('click', () => {
     popupReview.classList.add('is-show');
@@ -550,3 +554,10 @@ popupReviewCross.addEventListener('click', () => {
     popupReview.classList.remove('is-show');
 });
 
+popupReviewContainer.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+popupReview.addEventListener('click', () => {
+    popupReview.classList.remove('is-show');
+});
